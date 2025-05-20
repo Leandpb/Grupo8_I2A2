@@ -10,3 +10,17 @@ O primeiro arquivo é referente ao registro de como foi realizada a pesquisa, o 
 Entendo que vamos incrementar ou aproveitar o relatório gerado para enviarmos o nosso trabalho final ao Celso. 
 
 Fico à disposição para seguirmos com os próximos passos e consolidação dos resultados obtidos pelo grupo.
+
+
+
+
+
+Caso alguém precise se familiarizar com os conceitos fiscais, recomendo a consulta à documentação dessas soluções já existentes, que dão um panorama de como desenvolvemos soluções neste sentido hoje e do próprio processo de negócio, abaixo alguns exemplos:
+
+Resumo da solução SAP (ERP S/4 HANA): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/c5e66d2df826499d9b8c76b8355601c3/6648d953292a424de10000000a174cb4.html?mt=pt-BR
+Solução específica da SAP para NFE: https://help.sap.com/docs/SAP_ELECTRONIC_INVOICING_FOR_BRAZIL/e04cbb64541548f1bee0e4cb30fada56/b03699aa7507424283161c177f2bd9b2.html?mt=pt-BR
+
+Contudo, além das soluções para gestão das notas fiscais, ainda temos soluções especializadas em entregas de obrigações ficais (como o TaxOne da Thomson Reuters).
+ 
+Minha sensação, a partir das orientações do Celso, é que inicialmente precisamos nos aprofundar no assunto, identificar os principais problemas (gerais e por setor de negócio) e, conforme formos avançando nas próximas duas ou três aulas, vamos definindo qual será o escopo específico do projeto a partir das ferramentas que forem elencadas para uso. 
+Ah, dependendo do caso posso envolver alguns colegas aqui da Meta para nos apoiar em pontos específicos ou tirar algumas dúvidas técnicas. 
