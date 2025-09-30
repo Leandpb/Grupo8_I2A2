@@ -192,7 +192,7 @@ with st.sidebar:
     csv_file = st.file_uploader("Selecione um arquivo .csv", type=["csv"], accept_multiple_files=False)
     st.divider()
     st.header("Configurações")
-    use_llm = st.toggle("Usar LLM (GPT-5) para queries em linguagem natural", value=True)
+    use_llm = st.toggle("Usar LLM (GPT-4.1-mini) para queries em linguagem natural", value=True)
     if use_llm:
         st.info("Defina a variável de ambiente OPENAI_API_KEY no Colab/terminal antes de iniciar.", icon="🔑")
     st.markdown("**Modelo**")
