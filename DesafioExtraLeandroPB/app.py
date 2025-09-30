@@ -240,7 +240,7 @@ if show_memory:
             st.write("Sem histórico.")
 
 # ----- Tabs -----
-tab_overview, tab_eda, tab_qna, tab_insights = st.tabs(
+tab_overview, tab_eda, tab_qna = st.tabs(
     ["📄 Visão Geral", "🔎 EDA Guiado", "❓ Pergunte ao Agente"]
     #["📄 Visão Geral", "🔎 EDA Guiado", "❓ Pergunte ao Agente", "📝 Conclusões"]
 )
