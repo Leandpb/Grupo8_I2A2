@@ -29,7 +29,7 @@ MODEL_NAME = os.getenv("OPENAI_MODEL_NAME", "gpt-4.1-mini")  # override if neede
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # -------------- Utility & Memory --------------
-APP_TITLE = "Agente Genérico de Exploração e Análise de Dados (EDA) para arquivo tipo (CSV)" \n "Autor: Leandro Pantalena Barbosa"
+APP_TITLE = "Agente Genérico de Exploração e Análise de Dados (EDA) para arquivo tipo (CSV) - Autor: Leandro Pantalena Barbosa"
 MEM_DIR = ".agent_memory"
 os.makedirs(MEM_DIR, exist_ok=True)
 
