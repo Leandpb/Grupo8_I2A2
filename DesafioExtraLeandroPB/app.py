@@ -439,14 +439,6 @@ with tab_insights:
                 - Outliers relevantes
                 - Categorias mais/menos frequentes
                 Evite especulações não suportadas.
-                Estatísticas:
-                {desc}
-
-                Correlações:
-                {corr}
-
-                Frequências:
-                {freq_md}
                 """
                 text = call_llm(p)
                 append_memory(mem_key, {"type":"note", "text": text, "ts": datetime.utcnow().isoformat()})
