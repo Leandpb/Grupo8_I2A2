@@ -241,7 +241,8 @@ if show_memory:
 
 # ----- Tabs -----
 tab_overview, tab_eda, tab_qna, tab_insights = st.tabs(
-    ["📄 Visão Geral", "🔎 EDA Guiado", "❓ Pergunte ao Agente", "📝 Conclusões"]
+    ["📄 Visão Geral", "🔎 EDA Guiado", "❓ Pergunte ao Agente"]
+    #["📄 Visão Geral", "🔎 EDA Guiado", "❓ Pergunte ao Agente", "📝 Conclusões"]
 )
 
 with tab_overview:
@@ -407,44 +408,5 @@ with tab_qna:
             "a": answer_text,
             "ts": datetime.utcnow().isoformat()
         })
-
-with tab_insights:
-    st.subheader("Notas & Conclusões do Agente")
-    st.caption("Escreva resumos e principais insights. Eles ficam salvos na memória local por dataset.")
-    new_note = st.text_area("Adicionar nota/conclusão")
-    cols = st.columns(2)
-    if cols[0].button("Salvar nota"):
-        if new_note.strip():
-            append_memory(mem_key, {"type":"note", "text": new_note.strip(), "ts": datetime.utcnow().isoformat()})
-            st.success("Nota salva! Recarregue/expanda 'Memória' na barra lateral para ver.")
-        else:
-            st.warning("Escreva algo antes de salvar.")
-    if cols[1].button("Gerar conclusões automaticamente (LLM)"):
-        if not use_llm:
-            st.warning("Ative 'Usar LLM' na barra lateral e configure a OPENAI_API_KEY.")
-        else:
-            # sample insights prompt
-            try:
-                desc = describe_numeric(df).to_markdown() if not describe_numeric(df).empty else "Sem numéricos."
-                corr = correlation_matrix(df).to_markdown() if not correlation_matrix(df).empty else "Sem correlação numérica suficiente."
-                freq_str = []
-                for k, v in freq_tables(df).items():
-                    freq_str.append(f"Coluna: {k}\n{v.to_markdown()}")
-                freq_md = "\n\n".join(freq_str) if freq_str else "Sem colunas categóricas."
-                p = f"""
-                Gere um resumo em PT-BR, claro e conciso (5-10 bullets) com conclusões sobre o dataset.
-                Considere:
-                - Estatísticas básicas
-                - Possíveis correlações e tendências
-                - Outliers relevantes
-                - Categorias mais/menos frequentes
-                Evite especulações não suportadas.
-                """
-                text = call_llm(p)
-                append_memory(mem_key, {"type":"note", "text": text, "ts": datetime.utcnow().isoformat()})
-                st.markdown(text)
-                st.success("Conclusões geradas e salvas na memória.")
-            except Exception as e:
-                st.error(f"Falha ao gerar conclusões com LLM: {e}")
 
 st.caption("⚠️ Memória é salva localmente (arquivo .jsonl) e se perde ao encerrar o ambiente do Colab.")
