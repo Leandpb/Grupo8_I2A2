@@ -1,1 +1,3 @@
+Relatório — Agente Genérico de EDA (CSV)
 
+Objetivo: Criar um agente de EDA genérico, capaz de ler qualquer CSV, responder perguntas em linguagem natural, gerar gráficos e manter memória de análises.
